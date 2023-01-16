@@ -18,30 +18,19 @@ services:
       - hub 
     environment: 
       - HUB_HOST=hub 
-  search-module:
-    image: ransomeli/selenium-docker
-    depends_on:
-      - chrome
-      - firefox
-    environment:
-      - BROWSER=chrome
-      - HUB_HOST=hub
-      - MODULE=search-module.xml
-    volumes:
-      - ./search-result1:/usr/share/udemy/test-output
-  search-module2:
-    image: ransomeli/selenium-docker
+  search-module-aaca:
+    image: ransomeli/selenium-docker2
     depends_on:
       - chrome
       - firefox
     environment:
       - BROWSER=firefox
       - HUB_HOST=hub
-      - MODULE=search-module.xml
+      - MODULE=search-aaca.xml
     volumes:
-      - ./search-result2:/usr/share/udemy/test-output    
-  book-flight-module1:
-    image: ransomeli/selenium-docker
+      - ./search-result:/usr/share/udemy/test-output
+  book-flight-module:
+    image: ransomeli/selenium-docker2
     depends_on:
       - chrome
       - firefox
@@ -50,5 +39,4 @@ services:
       - BROWSER=firefox
       - MODULE=book-flight-module.xml
     volumes:
-      - ./book-result1:/usr/share/udemy/test-output
-   
+      - ./book-result:/usr/share/udemy/test-output
