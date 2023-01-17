@@ -28,7 +28,7 @@ services:
       - HUB_HOST=hub
       - MODULE=search-aaca.xml
     volumes:
-      - ./search-result:/usr/share/udemy/test-output
+      - ./output/search-result:/usr/share/udemy/test-output
   book-flight-module:
     image: ransomeli/selenium-docker2
     depends_on:
@@ -39,4 +39,4 @@ services:
       - BROWSER=firefox
       - MODULE=book-flight-module.xml
     volumes:
-      - ./book-result:/usr/share/udemy/test-output
+      - ./output/book-result:/usr/share/udemy/test-output
